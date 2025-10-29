@@ -10,7 +10,7 @@ function App() {
           </a>
         </h1>
         <nav>
-          <a href="#">All games</a>
+          <a href="#">All Games</a>
           <div id="user">
             <a href="#">Create Game</a>
             <a href="#">Logout</a>
