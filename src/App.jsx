@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
-import Catalog from "./components/Catalog";
+import Catalog from "./components/games/Catalog";
 import ErrorPage from "./components/ErrorPage";
 import CreateGame from "./components/CreateGame";
 import Login from "./components/Login";

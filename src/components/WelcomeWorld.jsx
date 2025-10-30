@@ -1,5 +1,5 @@
-import LatestGameCard from "./LatestGameCard";
-import { games } from "./Catalog";
+import LatestGameCard from "./games/LatestGameCard";
+import { games } from "./games/Catalog";
 
 function WelcomeWorld() {
   return (
