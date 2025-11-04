@@ -5,11 +5,12 @@ import { games } from "../App";
 function GameDetails() {
   const params = useParams();
   const [game, setGame] = useState({});
+
   const id = Number(params.gameId);
 
   useEffect(() => {
     const searchedGame = games.find((g) => g.id === id);
-    console.log(games);
+
     setGame(searchedGame);
   }, [id]);
 
