@@ -1,5 +1,5 @@
 function CatalogGamesCard({ game }) {
-  const { title, imageUrl, category } = game;
+  const { id, title, imageUrl, category } = game;
 
   return (
     <div className="allGames">
@@ -7,7 +7,7 @@ function CatalogGamesCard({ game }) {
         <img src={imageUrl} />
         <h6>{category}</h6>
         <h2>{title}</h2>
-        <a href="#" className="details-button">
+        <a href={`/games/${id}`} className="details-button">
           Details
         </a>
       </div>

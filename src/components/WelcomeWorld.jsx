@@ -1,5 +1,5 @@
 import LatestGameCard from "./games/LatestGameCard";
-import { games } from "./games/Catalog";
+import { games } from "../App";
 
 function WelcomeWorld() {
   return (

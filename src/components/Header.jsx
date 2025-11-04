@@ -1,28 +1,59 @@
-function Header({ getRoute }) {
-  function getUrlHandler(e) {
-    e.preventDefault();
+import { NavLink } from "react-router";
 
-    const url = new URL(e.target.href);
+import "./Header.css";
 
-    getRoute(url.pathname);
-  }
-
+function Header() {
   return (
-    <header onClick={getUrlHandler}>
+    <header>
       <h1>
-        <a className="home" href="/home">
+        <NavLink className="home" to="/">
           GamesPlay
-        </a>
+        </NavLink>
       </h1>
       <nav>
-        <a href="/catalog">All Games</a>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending ? "" : isActive ? "active-link" : ""
+          }
+          to="/catalog"
+        >
+          All Games
+        </NavLink>
         <div id="user">
-          <a href="/create">Create Game</a>
-          <a href="/logout">Logout</a>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "" : isActive ? "active-link" : ""
+            }
+            to="/create"
+          >
+            Create Game
+          </NavLink>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "" : isActive ? "active-link" : ""
+            }
+            to="/logout"
+          >
+            Logout
+          </NavLink>
         </div>
         <div id="guest">
-          <a href="/login">Login</a>
-          <a href="/register">Register</a>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "" : isActive ? "active-link" : ""
+            }
+            to="/login"
+          >
+            Login
+          </NavLink>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "" : isActive ? "active-link" : ""
+            }
+            to="/register"
+          >
+            Register
+          </NavLink>
         </div>
       </nav>
     </header>

@@ -1,5 +1,5 @@
 function LatestGameCard({ game }) {
-  const { title, imageUrl, rating } = game;
+  const { id, title, imageUrl, rating } = game;
   return (
     <div className="game">
       <div className="image-wrap">
@@ -15,7 +15,7 @@ function LatestGameCard({ game }) {
       </div>
       <p>Rating: {rating}</p>
       <div className="data-buttons">
-        <a href="#" className="btn details-btn">
+        <a href={`/games/${id}`} className="btn details-btn">
           Details
         </a>
       </div>
