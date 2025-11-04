@@ -1,26 +1,22 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { games } from "../App";
 
 function GameDetails() {
   const params = useParams();
+  const navigate = useNavigate();
   const [game, setGame] = useState({});
 
   const id = Number(params.gameId);
 
   useEffect(() => {
     const searchedGame = games.find((g) => g.id === id);
+    if (!searchedGame) {
+      return navigate("/catalog");
+    }
 
     setGame(searchedGame);
-  }, [id]);
-
-  if (Object.keys(game).length === 0) {
-    return (
-      <section id="game-details">
-        <h1>No game details yet</h1>
-      </section>
-    );
-  }
+  }, [id, navigate]);
 
   return (
     <section id="game-details">
